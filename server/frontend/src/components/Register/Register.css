@@ -3,7 +3,9 @@
   flex-direction: column;
   margin: auto;
   margin-top: 2%;
-  background-color: darkturquoise;
+  background-color: #10233f;
+  border-radius: 16px;
+  padding: 24px;
   min-width: 350px;
   width: 30%;
 }
@@ -18,6 +20,9 @@
   display: flex;
   flex-direction:row;
   align-items: center;
+  color: white;
+  justify-content: space-between;
+  width: 90%;
 }
 
 .input_field{
@@ -52,6 +57,11 @@
   font: 4em sans-serif;
   color: white;
   margin: .5cm;
+}
+
+.register_error {
+  color: #fecaca;
+  font-weight: 700;
 }
 
 .img_icon{

@@ -32,7 +32,7 @@ const PostReview = () => {
       return;
     }
 
-    let model_split = model.split(" ");
+    let model_split = model.split("|");
     let make_chosen = model_split[0];
     let model_chosen = model_split[1];
 
@@ -102,15 +102,20 @@ const PostReview = () => {
       <div className='input_field'>
       Car Make 
       <select name="cars" id="cars" onChange={(e) => setModel(e.target.value)}>
-      <option value="" selected disabled hidden>Choose Car Make and Model</option>
+      <option value="" defaultValue disabled hidden>Choose Car Make and Model</option>
       {carmodels.map(carmodel => (
-          <option value={carmodel.CarMake+" "+carmodel.CarModel}>{carmodel.CarMake} {carmodel.CarModel}</option>
+          <option
+            value={carmodel.CarMake+"|"+carmodel.CarModel}
+            key={`${carmodel.CarMake}-${carmodel.CarModel}-${carmodel.CarYear}`}
+          >
+            {carmodel.CarMake} {carmodel.CarModel}
+          </option>
       ))}
       </select>        
       </div >
 
       <div className='input_field'>
-      Car Year <input type="int" onChange={(e) => setYear(e.target.value)} max={2023} min={2015}/>
+      Car Year <input type="number" onChange={(e) => setYear(e.target.value)} max={2026} min={2015}/>
       </div>
 
       <div>

@@ -15,6 +15,9 @@ const dealerships = new Schema({
     type: String,
     required: true
   },
+  st: {
+    type: String,
+  },
   address: {
     type: String,
     required: true

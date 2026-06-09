@@ -1,0 +1,3 @@
+curl -c cookies.txt -H "Content-Type: application/json" -d '{"userName":"demouser","password":"DemoPass123!"}' http://127.0.0.1:8000/djangoapp/login
+
+{"userName": "demouser", "firstName": "Demo", "lastName": "User", "status": "Authenticated"}

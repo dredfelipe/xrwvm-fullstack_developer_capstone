@@ -1,0 +1,3 @@
+curl "http://127.0.0.1:8000/djangoapp/analyze_review?text=Fantastic%20services"
+
+{"status": 200, "text": "Fantastic services", "sentiment": "positive"}

@@ -1,0 +1,3 @@
+curl http://127.0.0.1:8000/djangoapp/get_cars
+
+{"status": 200, "CarModels": [{"CarMake": "Ford", "CarModel": "F-150", "CarType": "Truck", "CarYear": 2023}, {"CarMake": "Ford", "CarModel": "Mustang", "CarType": "Coupe", "CarYear": 2024}, {"CarMake": "Honda", "CarModel": "CR-V", "CarType": "SUV", "CarYear": 2024}, {"CarMake": "Honda", "CarModel": "Civic", "CarType": "Sedan", "CarYear": 2023}, {"CarMake": "Toyota", "CarModel": "Camry", "CarType": "Sedan", "CarYear": 2023}, {"CarMake": "Toyota", "CarModel": "RAV4", "CarType": "SUV", "CarYear": 2024}]}

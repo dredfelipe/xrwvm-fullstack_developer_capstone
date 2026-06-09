@@ -1,64 +1,55 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="static/style.css">
-  <link rel="stylesheet" href="static/bootstrap.min.css">
-<script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cars Dealership</title>
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <script>
+    async function logout(event) {
+      event.preventDefault();
+      await fetch('/djangoapp/logout');
+      sessionStorage.clear();
+      window.location.reload();
+    }
 
-const logout = async (e) => {
-//Include the code for logout here.
-};
-
-let checkSession = ()=>{
-  let curr_user = sessionStorage.getItem("username");
-
-  if (curr_user && curr_user !== "") {
-    document.getElementById("loginlogout").innerHTML = 
-    '<span class="homepage_links">' + curr_user +'</span>' +
-    '<a class="homepage_links" onclick="logout()" href="/">Logout</a>'
-  } else {
-    document.getElementById("loginlogout").innerHTML = 
-    '<a class="homepage_links" href="/login">Login</a>'+
-    '<a class="homepage_links"  href="/register">Register</a>'
-  }
- }
-</script>
+    function checkSession() {
+      const username = sessionStorage.getItem('username');
+      const panel = document.getElementById('loginlogout');
+      if (username) {
+        panel.innerHTML =
+          '<span class="welcome-user">Welcome, ' + username + '</span>' +
+          '<a class="btn btn-outline-light" href="/djangoapp/logout" onclick="logout(event)">Logout</a>';
+      } else {
+        panel.innerHTML =
+          '<a class="btn btn-outline-light" href="/login">Login</a>' +
+          '<a class="btn btn-light" href="/register">Register</a>';
+      }
+    }
+  </script>
 </head>
 <body onload="checkSession()">
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
-  <div class="container-fluid">
-    <h2 style="padding-right: 5%;">Dealerships</h2>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" style="font-size: larger;" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        <div class="loginlink" id="loginlogout">
-        </div>
-        </span>
+  <nav class="navbar navbar-expand-lg navbar-dark dealership-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="/">Cars Dealership</a>
+      <div class="navbar-nav me-auto">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/about">About Us</a>
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </div>
+      <div class="auth-links" id="loginlogout"></div>
     </div>
-  </div>
-</nav>
-<div style="display: flex;flex-direction: column;">
-<div class="card" style="width: 50%;margin-top: 50px;align-self: center;">
-  <img src="static/car_dealership.jpg" class="card-img-top" alt="...">
-  <div class="banner">
-    <h5>Welcome to our Dealerships!</h5>
-    <a href="/dealers" class="btn" style="background-color: aqua;margin:10px">View Dealerships</a>
-  </div>
-</div>
-</div>
+  </nav>
+
+  <main class="home-hero">
+    <div class="home-copy">
+      <p class="eyebrow">Find your next dealership</p>
+      <h1>Trusted dealers. Real customer reviews.</h1>
+      <p>Browse branches across the United States and choose a dealership with confidence.</p>
+      <a href="/dealers" class="btn btn-primary btn-lg">View Dealerships</a>
+    </div>
+    <img src="/static/car_dealership.jpg" alt="Modern cars displayed at a dealership">
+  </main>
 </body>
 </html>

@@ -1,68 +1,64 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <!-- Link the style sheet here -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | Cars Dealership</title>
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
 </head>
-<div>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark dealership-nav">
     <div class="container-fluid">
-      <h2 style="padding-right: 5%;">Dealerships</h2>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
-          </li>
-        </ul>
+      <a class="navbar-brand fw-bold" href="/">Cars Dealership</a>
+      <div class="navbar-nav">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link active" aria-current="page" href="/about">About Us</a>
+        <a class="nav-link" href="/contact">Contact Us</a>
       </div>
     </div>
   </nav>
-  
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-      <!-- Insert header information here -->
-      </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
-        </div>
-      </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
-        </div>
-      </div>
+  <main class="page-shell">
+    <section class="page-hero">
+      <p class="eyebrow">A nationwide automotive network</p>
+      <h1>About Cars Dealership</h1>
+      <p>
+        We connect drivers with trusted dealership branches across the United
+        States. Our team makes it easy to compare locations, read genuine
+        customer experiences, and share feedback after a purchase.
+      </p>
+    </section>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
+    <section class="team-grid" aria-label="Leadership team">
+      <article class="team-card">
+        <img src="/static/person.png" alt="Alex Morgan, Chief Executive Officer">
+        <div class="team-card-body">
+          <h2>Alex Morgan</h2>
+          <p class="role">Chief Executive Officer</p>
+          <p>Alex leads our national growth strategy and dealership partnerships.</p>
+          <a href="mailto:alex.morgan@carsdealership.com">alex.morgan@carsdealership.com</a>
         </div>
-      </div>
-    </div>
-    </div>
-    </div>
-    
-</div>
-
+      </article>
+      <article class="team-card">
+        <img src="/static/person.png" alt="Jordan Lee, Customer Experience Director">
+        <div class="team-card-body">
+          <h2>Jordan Lee</h2>
+          <p class="role">Customer Experience Director</p>
+          <p>Jordan ensures every branch delivers a transparent buying experience.</p>
+          <a href="mailto:jordan.lee@carsdealership.com">jordan.lee@carsdealership.com</a>
+        </div>
+      </article>
+      <article class="team-card">
+        <img src="/static/person.png" alt="Taylor Brooks, Technology Director">
+        <div class="team-card-body">
+          <h2>Taylor Brooks</h2>
+          <p class="role">Technology Director</p>
+          <p>Taylor builds the digital tools that connect customers and dealers.</p>
+          <a href="mailto:taylor.brooks@carsdealership.com">taylor.brooks@carsdealership.com</a>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
 </html>
