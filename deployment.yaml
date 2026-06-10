@@ -14,11 +14,16 @@ spec:
     spec:
       containers:
         - name: cars-dealership
-          image: us.icr.io/YOUR_NAMESPACE/cars-dealership:latest
+          image: cars-dealership:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
           env:
+            - name: DJANGO_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: cars-dealership-secrets
+                  key: django-secret-key
             - name: DJANGO_ALLOWED_HOSTS
               value: "*"
             - name: DJANGO_DEBUG
