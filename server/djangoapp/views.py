@@ -44,10 +44,9 @@ def login_user(request):
     }, status=401)
 
 def logout_request(request):
-    username = request.user.username if request.user.is_authenticated else ''
     logout(request)
     return JsonResponse({
-        'userName': username,
+        'userName': '',
         'status': 'Logged out',
     })
 
@@ -137,8 +136,4 @@ def analyze_review(request):
     text = request.GET.get('text', '')
     if not text:
         return JsonResponse({'status': 400, 'message': 'text is required'}, status=400)
-    return JsonResponse({
-        'status': 200,
-        'text': text,
-        'sentiment': analyze_review_sentiments(text),
-    })
+    return JsonResponse({'sentiment': analyze_review_sentiments(text)})

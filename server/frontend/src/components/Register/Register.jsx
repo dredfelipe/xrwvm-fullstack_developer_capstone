@@ -54,6 +54,7 @@ const Register = () => {
                 className="input_field"
                 name={name}
                 type={type}
+                placeholder={label}
                 value={form[name]}
                 onChange={updateField}
                 required

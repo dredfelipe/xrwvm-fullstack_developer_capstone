@@ -30,6 +30,7 @@ class AuthenticationTests(TestCase):
         logout_response = self.client.get('/djangoapp/logout')
         self.assertEqual(logout_response.status_code, 200)
         self.assertEqual(logout_response.json()['status'], 'Logged out')
+        self.assertEqual(logout_response.json()['userName'], '')
 
     def test_registration_requires_all_fields(self):
         response = self.client.post(
@@ -47,3 +48,11 @@ class CarModelTests(TestCase):
         self.assertGreater(len(response.json()['CarModels']), 0)
         self.assertTrue(CarMake.objects.exists())
         self.assertTrue(CarModel.objects.exists())
+
+    def test_analyze_review_returns_sentiment_only(self):
+        response = self.client.get(
+            '/djangoapp/analyze_review',
+            {'text': 'Fantastic services'},
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), {'sentiment': 'positive'})

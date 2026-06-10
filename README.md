@@ -1,9 +1,13 @@
-# Cars Dealership
+# fullstack_developer_capstone
 
-Cars Dealership is the capstone project for the IBM Full Stack Software
-Developer Professional Certificate. It is a national dealership portal where
-visitors can browse and filter dealership branches, read customer reviews, and
-create an account to post a review.
+Repository name: `xrwvm-fullstack_developer_capstone`
+
+Project name: `fullstack_developer_capstone`
+
+Cars Dealership is the application built for the IBM Full Stack Software
+Developer Professional Certificate capstone. It is a national dealership
+portal where visitors can browse and filter dealership branches, read customer
+reviews, and create an account to post a review.
 
 ## Architecture
 

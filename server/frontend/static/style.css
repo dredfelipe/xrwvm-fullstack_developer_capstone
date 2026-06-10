@@ -25,7 +25,8 @@ a { color: var(--blue); }
 .team-card h2 { color: var(--navy); font-size: 1.3rem; }
 .role { color: var(--blue); font-weight: 700; }
 .contact-card { display: grid; grid-template-columns: minmax(280px, 40%) 1fr; align-items: center; gap: 48px; background: white; border-radius: 18px; padding: 42px; }
-.contact-card > img { width: 100%; max-height: 410px; object-fit: contain; }
+.contact-images { display: grid; gap: 16px; }
+.contact-images img { width: 100%; max-height: 260px; object-fit: cover; border-radius: 14px; }
 .contact-details { display: grid; grid-template-columns: 100px 1fr; gap: 14px 20px; margin-top: 28px; }
 .contact-details dt { color: var(--navy); font-weight: 700; }
 .contact-details dd { margin: 0; }
